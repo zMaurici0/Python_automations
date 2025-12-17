@@ -4,7 +4,6 @@ import smtplib
 import os
 from dotenv import load_dotenv
 
-
 # carrega variáveis de ambiente
 
 load_dotenv()
