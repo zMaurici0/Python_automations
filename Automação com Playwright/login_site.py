@@ -1,5 +1,4 @@
 from playwright.sync_api import sync_playwright
-import time
 from dotenv import load_dotenv
 import os
 
@@ -16,5 +15,6 @@ with sync_playwright() as pw:
     pag.get_by_test_id("submit-button").click()
     pag.get_by_test_id("login-pass").fill(senha)
     pag.get_by_test_id("submit-button").click()
-    time.sleep(5)
+    pag.get_by_text("Boas vindas ao nosso Portal do Aluno!").wait_for()
+    pag.screenshot(path="Automação com Playwright/logado.png")
     navegador.close()
